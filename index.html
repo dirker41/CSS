@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+  <head>
+  <title> </title>
+  <script>
+var myI,myW,myH
+function R1esizeIframe(i) {
+    document.getElementById("iframe1").style.visibility = 'visible';
+    i.height = 10;
+    i.width = 10;
+    var b = i.contentWindow.document.body;  
+    myI = i;
+    myH = b.scrollHeight;
+    myW = b.scrollWidth;
+    setTimeout("ResizeIframe2(myI,myW,myH)",100);
+       
+}
+function ResizeIframe2(i,w,h) {
+    i.height = h;
+    i.width = w;
+}
+ 
+ 
+function HideIframe() {
+ 
+ 
+  var o=document.getElementById("iframe1");
+  if( o.style.visibility == 'hidden' )
+  {
+    o.style.visibility='visible';
+  }
+  else
+  {
+    o.style.visibility='hidden';
+  }
+}
+ 
+ 
+ 
+</script>
+  <style>
+  ul { /* 取消ul預設的內縮及樣式 */
+        margin: 0;
+        padding: 0;
+        list-style: none;
+               
+    }
+ 
+    ul.drop-down-menu {
+        border: #ccc 1px solid;
+        display: inline-block;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px;
+               
+    }
+ 
+    ul.drop-down-menu li {
+        position: relative;
+        white-space: nowrap;
+        border-right: #ccc 1px solid;
+    }
+ 
+    ul.drop-down-menu > li:last-child {
+        border-right: none;
+    }
+ 
+    ul.drop-down-menu > li {
+        float: left; /* 只有第一層是靠左對齊*/
+    }
+ 
+     ul.drop-down-menu a {
+        background-color: #fff;
+        color: #333;
+        display: block;
+        padding: 0 30px;
+        text-decoration: none;
+        line-height: 40px;
+ 
+    }
+    ul.drop-down-menu a:hover { /* 滑鼠滑入按鈕變色*/
+        background-color: #ef5c28;
+        color: #fff;
+               
+    }
+    ul.drop-down-menu li:hover > a { /* 滑鼠移入次選單上層按鈕保持變色*/
+        background-color: #ef5c28;
+        color: #fff;
+    }
+       
+ 
+   ul.drop-down-menu ul {
+        border: #ccc 1px solid;
+        position: absolute;
+        z-index: 99;
+        left: -1px;
+        top: 100%;
+       min-width: 180px;
+    }
+ 
+    ul.drop-down-menu ul li {
+        border-bottom: #ccc 1px solid;
+    }
+ 
+    ul.drop-down-menu ul li:last-child {
+        border-bottom: none;
+    }
+ 
+    ul.drop-down-menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+        z-index: 999;
+        top: 5px;
+        left: 99%;
+                background-color: #FFFFFF ;
+    }
+       
+       
+        ul.drop-down-menu ul { /*隱藏次選單*/
+        display: none;
+    }
+ 
+    ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+        display: block;
+    }
+       
+        iframe {
+            scrolling : no;
+                width : 100% ;
+                height : 900 ;
+                border: none ;
+                z-index : 0 ;
+        }
+       
+        iframe a:hover { /* 滑鼠滑入按鈕變色*/
+        display: none;
+               
+    }
+       
+       
+  </style>
+ 
+ 
+  
+  <head>
+ 
+  
+  
+ <body>
+  <ul class="drop-down-menu">
+        <li><a href="./index.html">首頁</a>
+        </li>
+               
+        <li><a href="./cabling/index.html">Cabling</a>
+            <ul >
+                <li><a href="">
+                                    工安管理原則</a>
+                </li>
+               
+            </ul>
+        </li>
+        <li><a href="#" onclick='HideIframe111()' >Network</a>
+                    <ul>
+                           
+                               
+                        </ul>
+        </li>
+        <li><a href="./web/OA.htm">OA</a>
+            <ul>
+              
+            </ul>
+        </li>
+                <li><a href="#">OA-機房管理</a>
+            <ul>
+                      
+                               
+            </ul>
+        </li>
+        <li><a href="#">Security</a>
+                    <ul>
+                           
+                        </ul>
+        </li>
+                <li><a href="#">北廠資訊課</a>
+                    <ul>
+                            
+                        </ul>
+        </li>
+        <li><a href="#">Telecom</a>
+                    <ul>
+                           
+                        </ul>
+        </li>
+                <li><a href="./routineJob/index.html">Routine Job</a>
+                    <ul>
+                            <li><a href="#">每日業務</a>
+                                    <ul>
+                                            
+                                        </ul>
+                </li>
+                                <li><a href="#">每月業務</a>
+                                    <ul>
+                                            
+                                        </ul>
+                </li>
+                                <li><a href="#">每季業務</a>
+                                    <ul>
+                                            
+                                        </ul>
+                </li>
+                                <li><a href="#">每半年業務</a>
+                                    <ul>
+                                          
+                                        </ul>
+                </li>
+                                <li><a href="#">每年業務</a>
+                                    <ul>
+                                            
+                                        </ul>
+                </li>
+                        </ul>
+        </li>
+               
+               
+        <li><a href="#">other</a>
+                    <ul>
+          
+                                <li><a href="#">other</a>
+                </li>
+                        </ul>
+        </li>
+    </ul>       
+        <!--
+        <BR>
+        <BR>
+        <iframe id="iframe1"  width="99%" height= "900"  onload="ResizeIframe(this)" name="myFrame" src="http://autciap01.corpnet.auo.com/todo_list/"></iframe>
+       
+       
+ 
+       
+        <BR>
+        <BR>
+        -->
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+       
+        <IFRAME src="" frameBorder=0 width=300></IFRAME>
+       
+</body>
